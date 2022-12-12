@@ -10,20 +10,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.wait import WebDriverWait
 options = Options()
-options_list = [
-            "--headless",
-            "--enable-javascript",
-            "start-maximized",
-            "--disable-gpu",
-            "--blink-settings=imagesEnabled=false",
-            "--disable-extensions",
-            "--no-sandbox",
-            "--disable-browser-side-navigation",
-            "--disable-dev-shm-usage",
-        ]
-
-        for option in options_list:
-            options.add_argument(option)
+options_list = ["--headless", "--enable-javascript","start-maximized",
+  "--disable-gpu","--blink-settings=imagesEnabled=false","--disable-extensions","--no-sandbox","--disable-browser-side-navigation","--disable-dev-shm-usage",]
+for option in options_list:
+        options.add_argument(option)
 
         options.page_load_strategy = "none"
         options.add_experimental_option(
