@@ -2,7 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.service import Service
 
-service = Service(executable_path="/path/to/geckodriver")
+service = Service(executable_path="./geckodriver")
 driver = webdriver.Firefox(service=service)
 
 # Navigate to the login page
