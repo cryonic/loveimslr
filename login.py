@@ -1,9 +1,12 @@
 # coding=utf-8
+# coding=utf-8
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
+# Open a web browser and navigate to the website
 driver = webdriver.Firefox(executable_path="./geckodriver")
-
-# Navigate to the login page
 driver.get("https://www.imslr.com")
 print('打开www.imslr.com')
 
