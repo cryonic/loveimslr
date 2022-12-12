@@ -1,17 +1,6 @@
 # coding=utf-8
 # Import necessary libraries
 import os
-import sys
-import traceback
-import requests
-import selenium.common
-import selenium.webdriver
-from loguru import logger
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.relative_locator import locate_with
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,8 +8,14 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 print('库导入完毕')
 
+# Get Chrome binary path
+chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', None)
+
 # Initialize the webdriver
-driver = webdriver.Chrome(executable_path="/path/to/chrome")
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = chrome_bin
+chrome_options.add_argument('--headless')
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER", None), chrome_options=chrome_options)
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
