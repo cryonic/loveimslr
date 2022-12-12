@@ -1,5 +1,6 @@
 # coding=utf-8
 # Import necessary libraries
+from selenium import driver
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -8,7 +9,7 @@ import time
 print('库导入完毕')
 
 # Wait for the login botton to appear
-login_box = WebDriverWait(webdriver, 60).until(
+login_box = WebDriverWait(driver, 60).until(
     EC.presence_of_element_located((By.XPATH, "//*[@id='nv_forum']"))
 )
 print('网页加载完毕')
