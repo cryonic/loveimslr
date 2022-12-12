@@ -48,7 +48,7 @@ print('点击另一个登录按钮')
 # Wait for the head sculpture to appear
 login_form = WebDriverWait(driver, 60).until(
     EC.presence_of_element_located((By.XPATH, "//*[contains(@id, 'avt')]"))
-
+)
 # Click the login button
 login_button = driver.find_element_by_xpath("//*[contains(@id, 'loginform')]")
 print('点击另一个登录按钮')
