@@ -1,28 +1,12 @@
 # coding=utf-8
-# Import necessary libraries
-import os
-# Set the path to the Chrome webdriver
-os.environ["CHROME_DRIVER"] = "/path/to/chromedriver"
+# Import the necessary libraries
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-# Use the Chrome webdriver to control the browser
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER", None), chrome_options=chrome_options)
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
-print('库导入完毕')
 
-# Get Chrome binary path
-chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', None)
-
-# Initialize the webdriver
-chrome_options = webdriver.ChromeOptions()
-chrome_options.binary_location = chrome_bin
-chrome_options.add_argument('--headless')
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER", None), chrome_options=chrome_options)
+# Set up the webdriver
+driver = webdriver.Firefox()
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
