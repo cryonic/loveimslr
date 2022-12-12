@@ -1,6 +1,5 @@
 # coding=utf-8
 # Import necessary libraries
-from selenium import driver
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -8,12 +7,14 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 print('库导入完毕')
 
-# Open Chrome browser and go to the website
+# Initialize the webdriver
 driver = webdriver.Chrome()
+
+# Navigate to the login page
 driver.get("https://www.imslr.com")
 print('打开www.imslr.com')
 
-# Wait for the login botton to appear
+# Wait for the login button to appear
 login_box = WebDriverWait(driver, 60).until(
     EC.presence_of_element_located((By.XPATH, "//*[@id='nv_forum']"))
 )
@@ -38,6 +39,15 @@ print('账号输入完毕')
 password = driver.find_element_by_xpath("//*[contains(@id,'password')]")
 password.send_keys("Xingxue1234")
 print('密码输入完毕')
+
+# Click the login button
+login_button = driver.find_element_by_xpath("//*[contains(@id, 'loginform')]")
+login_button.click()
+print('点击另一个登录按钮')
+
+# Wait for the head sculpture to appear
+login_form = WebDriverWait(driver, 60).until(
+    EC.presence_of_element_located((By.XPATH, "//*[contains(@id, 'avt')]"))
 
 # Click the login button
 login_button = driver.find_element_by_xpath("//*[contains(@id, 'loginform')]")
