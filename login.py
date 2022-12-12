@@ -1,9 +1,8 @@
 # coding=utf-8
 from selenium import webdriver
-from selenium.webdriver.common.service import Service
+from selenium.webdriver import Firefox
 
-service = Service(executable_path="./geckodriver")
-driver = webdriver.Firefox(service=service)
+driver = Firefox(executable_path="./geckodriver")
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
