@@ -1,18 +1,38 @@
 # coding=utf-8
-from selenium import webdriver
+import os
+import sys
+import traceback
+import selenium.common
+import selenium.webdriver
 from selenium.webdriver.chrome.options import Options
-
-chrome_options = Options()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
-
-
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.relative_locator import locate_with
+from selenium.webdriver.support.wait import WebDriverWait
+options = Options()
+options_list = [
+            "--headless",
+            "--enable-javascript",
+            "start-maximized",
+            "--disable-gpu",
+            "--blink-settings=imagesEnabled=false",
+            "--disable-extensions",
+            "--no-sandbox",
+            "--disable-browser-side-navigation",
+            "--disable-dev-shm-usage",
+        ]
 
-driver = webdriver.Chrome('/home/<user>/chromedriver',chrome_options=chrome_options)
+        for option in options_list:
+            options.add_argument(option)
+
+        options.page_load_strategy = "none"
+        options.add_experimental_option(
+            "excludeSwitches", ["ignore-certificate-errors", "enable-automation"]
+        )
+
+        driver = selenium.webdriver.Chrome(options=options)
+
+
 driver.get("https://www.imslr.com")
 print('打开www.imslr.com')
 
