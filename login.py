@@ -1,10 +1,9 @@
 # coding=utf-8
-
 from selenium import webdriver
+from selenium.webdriver.common.service import Service
 
-# 创建一个新的WebDriver实例
-driver = webdriver.Firefox(executable_path="./geckodriver")
-
+service = Service(executable_path="/path/to/geckodriver")
+driver = webdriver.Firefox(service=service)
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
