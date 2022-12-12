@@ -8,6 +8,11 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 print('库导入完毕')
 
+# Open Chrome browser and go to the website
+driver = webdriver.Chrome()
+driver.get("https://www.imslr.com")
+print('打开www.imslr.com')
+
 # Wait for the login botton to appear
 login_box = WebDriverWait(driver, 60).until(
     EC.presence_of_element_located((By.XPATH, "//*[@id='nv_forum']"))
