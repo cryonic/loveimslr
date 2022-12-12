@@ -8,7 +8,7 @@ import time
 print('库导入完毕')
 
 # Initialize the webdriver
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(executable_path="/path/to/chrome")
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
