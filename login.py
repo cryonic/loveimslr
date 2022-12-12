@@ -1,27 +1,15 @@
 # coding=utf-8
+
 import os
-import sys
-import traceback
-import selenium.common
-import selenium.webdriver
-from selenium.webdriver.chrome.options import Options
+
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.relative_locator import locate_with
-from selenium.webdriver.support.wait import WebDriverWait
-options = Options()
-options_list = ["--headless", "--enable-javascript","start-maximized",
-  "--disable-gpu","--blink-settings=imagesEnabled=false","--disable-extensions","--no-sandbox","--disable-browser-side-navigation","--disable-dev-shm-usage",]
-for option in options_list:
-        options.add_argument(option)
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
-        options.page_load_strategy = "none"
-        options.add_experimental_option(
-            "excludeSwitches", ["ignore-certificate-errors", "enable-automation"]
-        )
 
-        driver = selenium.webdriver.Chrome(options=options)
-
+def test_basic_options():
+    options = FirefoxOptions()
+    driver = webdriver.Firefox(options=options)
 
 driver.get("https://www.imslr.com")
 print('打开www.imslr.com')
