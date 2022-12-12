@@ -13,7 +13,7 @@ from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.wait import WebDriverWait
 
 # Set up the webdriver
-driver = selenium.webdriver.Chrome()
+driver = selenium.webdriver.Chrome(options=Options)
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
