@@ -1,11 +1,18 @@
 # coding=utf-8
-# coding=utf-8
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome('/home/<user>/chromedriver',chrome_options=chrome_options)
 driver.get("https://www.imslr.com")
 print('打开www.imslr.com')
 
