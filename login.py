@@ -9,7 +9,7 @@ print('库导入完毕')
 
 # Wait for the login botton to appear
 login_box = WebDriverWait(webdriver, 60).until(
-    EC.presence_of_element_located(By.XPATH, "//*[@id='nv_forum']")
+    EC.presence_of_element_located((By.XPATH, "//*[@id='nv_forum']"))
 )
 print('网页加载完毕')
 
@@ -39,6 +39,6 @@ print('点击另一个登录按钮')
 
 # Wait for the head sculpture to appear
 login_form = WebDriverWait(driver, 60).until(
-    EC.presence_of_element_located(By.XPATH, "//*[contains(@id, 'avt')]")
+    EC.presence_of_element_located((By.XPATH, "//*[contains(@id, 'avt')]"))
 )
 print('头像加载完毕')
