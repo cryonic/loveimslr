@@ -12,14 +12,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.wait import WebDriverWait
 
-# Import the necessary libraries
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 # Set up the webdriver
-driver = selenium.webdriver.Chrome(options=options)
+driver = selenium.webdriver.Chrome()
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
