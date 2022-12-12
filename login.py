@@ -3,7 +3,7 @@
 from selenium import webdriver
 
 # 创建一个新的WebDriver实例
-driver = webdriver.Firefox()
+driver = webdriver.Firefox(executable_path="/geckodriver")
 
 
 # Navigate to the login page
