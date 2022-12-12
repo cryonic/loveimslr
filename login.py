@@ -5,8 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Open a web browser and navigate to the website
-driver = webdriver.Firefox(executable_path="./geckodriver")
+driver = webdriver.Chrome()
 driver.get("https://www.imslr.com")
 print('打开www.imslr.com')
 
