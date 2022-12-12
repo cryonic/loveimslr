@@ -5,7 +5,7 @@ import sys
 import traceback
 import selenium.common
 import selenium.webdriver
-from loguru import logger
+
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -19,7 +19,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # Set up the webdriver
-driver = webdriver.Firefox()
+driver = selenium.webdriver.Chrome(options=options)
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
