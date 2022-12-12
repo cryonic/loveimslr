@@ -1,22 +1,26 @@
+name: clock-in
 
-name: Login
 on:
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '0 23 * * *'
+
   workflow_dispatch:
+
 jobs:
-  selenium_test:
-    runs-on: ubuntu-latest
+  Clock_in:
+    runs-on: ubuntu-22.04
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.10.6'
-    - name: Install dependencies
-      run:
-        pip3 install selenium
-        pip3 install geckodriver
-    - name: Run Selenium tests
-      run: 
-        python login.py
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10.6'
+
+      - run: pip3 install selenium
+
+      - env:
+          XUHAO: ${{ secrets.XUHAO }}
+          MIMA: ${{ secrets.MIMA }}
+          PUSHPLUS: ${{ secrets.PUSHPLUS }}
+        run: python login.py
