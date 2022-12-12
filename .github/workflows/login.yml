@@ -5,16 +5,19 @@ on:
     - cron: '0 12 * * *'
   workflow_dispatch:
 jobs:
-  run-login-script:
+  selenium_test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - name: Install dependencies
-        run: |
-          python -m pip install selenium
-      - name: Run login script
-        run: python login.py
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install selenium
+        # Install the Firefox driver
+        python -m pip install geckodriver
+    - name: Run Selenium tests
+      run: |
+        python login.py
