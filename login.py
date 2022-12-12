@@ -31,7 +31,7 @@ print('账号输入完毕')
 # Input the password
 password = driver.find_element_by_xpath("//*[contains(@id,'password')]")
 password.send_keys("Xingxue1234")
-print（‘密码输入完毕’）
+print('密码输入完毕')
 
 # Click the login button
 login_button = driver.find_element_by_xpath("//*[contains(@id, 'loginform')]")
