@@ -1,20 +1,10 @@
 # coding=utf-8
 
-import os
-import sys
-import traceback
-import selenium.common
-import selenium.webdriver
+from selenium import webdriver
 
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.relative_locator import locate_with
-from selenium.webdriver.support.wait import WebDriverWait
+# 创建一个新的WebDriver实例
+driver = webdriver.Firefox()
 
-# Set up the webdriver
-options = Options()
-driver = selenium.webdriver.Chrome(options=Options)
 
 # Navigate to the login page
 driver.get("https://www.imslr.com")
