@@ -1,7 +1,14 @@
 # coding=utf-8
 # Import necessary libraries
 import os
+# Set the path to the Chrome webdriver
+os.environ["CHROME_DRIVER"] = "/path/to/chromedriver"
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+# Use the Chrome webdriver to control the browser
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER", None), chrome_options=chrome_options)
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
