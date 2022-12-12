@@ -13,6 +13,7 @@ from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.wait import WebDriverWait
 
 # Set up the webdriver
+options = Options()
 driver = selenium.webdriver.Chrome(options=Options)
 
 # Navigate to the login page
